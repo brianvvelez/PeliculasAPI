@@ -3,6 +3,13 @@ using PeliculasAPI.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Configurar puerto dinámico para plataformas Cloud (Render, Railway, etc.)
+var port = Environment.GetEnvironmentVariable("PORT");
+if (!string.IsNullOrEmpty(port))
+{
+    builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
+}
+
 // ── Servicios ──────────────────────────────────────────────────────────
 
 builder.Services.AddControllers();
