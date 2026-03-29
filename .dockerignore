@@ -1,0 +1,7 @@
+bin/
+obj/
+peliculas-web/
+*.db
+*.db-shm
+*.db-wal
+.git/
